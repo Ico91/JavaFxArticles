@@ -6,36 +6,27 @@
 
 package com.omg.javafxarticles.login;
 
+import com.omg.javafxarticles.articles.Component;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
  * @author krasimir
  */
-public class LoginComponent extends AnchorPane {
+public class LoginComponent extends Component {
+    
+    private static final String RESOURCE_URL = "/fxml/login/Login.fxml";
+    
     @FXML
     private TextField tfUsername;
     @FXML
     private TextField tfPassword;
     
     public LoginComponent() {
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login/Login.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
-        
-        try {
-            fxmlLoader.load();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
+        super(RESOURCE_URL);
     }
 }

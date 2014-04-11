@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import com.omg.javafxarticles.articles.details.* ?>
+<?import com.omg.javafxarticles.articles.list.* ?>
+<?import com.omg.javafxarticles.articles.head.* ?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox id="head" fx:id="head" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="900.0">
+            <children>
+                <ArticlesHeadComponent />
+            </children>
+        </HBox>
+        <HBox id="main" fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="900.0">
+            <children>
+                <HBox id="articlesList" fx:id="articlesList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="270.0">
+                    <children>
+                        <ArticlesListComponent />
+                    </children>
+                </HBox>
+                <HBox id="articleDetails" fx:id="articleDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="630.0" >
+                    <children>
+                        <ArticlesDetailsComponent />
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>
