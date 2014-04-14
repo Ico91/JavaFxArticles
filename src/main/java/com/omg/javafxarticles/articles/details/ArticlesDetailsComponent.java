@@ -7,6 +7,7 @@
 package com.omg.javafxarticles.articles.details;
 
 import com.omg.javafxarticles.articles.Component;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -35,4 +36,16 @@ public class ArticlesDetailsComponent extends Component {
         
     }
     
+    @FXML
+    private void saveButtonAction(ActionEvent event) {
+        String title = articleTitle.getText();
+        String content = articleContent.getText();
+        
+    }
+    
+    @FXML
+    private void resetButtonAction(ActionEvent event) {
+        articleTitle.setText("");
+        articleContent.setText("");
+    }
 }
