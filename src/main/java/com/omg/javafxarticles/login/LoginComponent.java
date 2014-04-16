@@ -7,7 +7,6 @@
 package com.omg.javafxarticles.login;
 
 import com.omg.javafxarticles.articles.Component;
-import com.omg.javafxarticles.main.Screens;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

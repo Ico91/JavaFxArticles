@@ -31,9 +31,9 @@ public class LoginController extends AnchorPane implements ChangeableView, Initi
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        login();
     }
     
-    @FXML
     public void login() {
         loginComponent.setOnLogin(new EventHandler<MouseEvent>() {
 
