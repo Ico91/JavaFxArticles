@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root id="AnchorPane" prefHeight="200.0" prefWidth="300.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="104.0" layoutY="13.0" text="Login:" AnchorPane.topAnchor="10.0">
+<font>
+<Font size="30.0" />
+</font></Label>
+        <HBox id="HBox" alignment="CENTER" layoutX="8.0" layoutY="48.0" spacing="5.0" AnchorPane.topAnchor="70.0">
+            <children>
+                <AnchorPane id="AnchorPane" prefWidth="278.0">
+                    <children>
+                        <Label layoutX="1.0" layoutY="2.0" prefWidth="72.0" text="Username:" />
+                        <TextField fx:id="tfUsername" layoutX="77.0" layoutY="0.0" prefWidth="200" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+        <HBox id="HBox" alignment="CENTER" layoutX="14.0" layoutY="74.0" spacing="5.0" AnchorPane.topAnchor="100.0">
+            <children>
+                <AnchorPane id="AnchorPane">
+                    <children>
+                        <Label layoutX="0.0" layoutY="3.0" text="Password:" />
+                        <TextField fx:id="tfPassword" layoutX="71.0" layoutY="0.0" prefWidth="200.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+        <Button id="btnLogin" fx:id="btnLogin" layoutX="232.0" layoutY="155.0" mnemonicParsing="false" text="Login" AnchorPane.bottomAnchor="25.0" />
+    </children>
+</fx:root>
