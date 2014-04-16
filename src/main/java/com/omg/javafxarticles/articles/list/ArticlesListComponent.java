@@ -19,7 +19,6 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
 /**
@@ -38,15 +37,14 @@ public class ArticlesListComponent extends Component {
     private TableColumn<Article, Date> dateCol;
     @FXML
     private TableView<Article> articlesTable;
-    
+
     private ObservableList<Article> articles = FXCollections.observableArrayList();
-    
+
     public ArticlesListComponent() {
         super(RESOURCE_URL);
-        
-        
+
         init();
-        
+
         deleteCol.setCellFactory(new Callback<TableColumn<Article, Button>, TableCell<Article, Button>>() {
 
             @Override
@@ -54,18 +52,24 @@ public class ArticlesListComponent extends Component {
                 TableCell<Article, Button> cell = new TableCell<Article, Button>() {
                     @Override
                     public void updateItem(Button item, boolean empty) {
+                        super.updateItem(item, empty);
                         System.out.println(empty);
-                        if (!empty) {
-                            Button btnDelete = new Button("X");
-                            btnDelete.setOnAction(new EventHandler<ActionEvent>() {
+                        Button btnDelete = new Button("X");
+                        btnDelete.setOnAction(new EventHandler<ActionEvent>() {
 
-                                @Override
-                                public void handle(ActionEvent event) {
-                                    articles.remove(getTableRow().getIndex());
-                                    System.out.println("Article deleted");
-                                }
-                            });
+                            @Override
+                            public void handle(ActionEvent event) {
+                                int index = getTableRow().getIndex();
+                                articles.remove(index);
+                                System.out.println("Article deleted");
+
+                            }
+                        });
+
+                        if (!empty) {
                             setGraphic(btnDelete);
+                        } else {
+                            setGraphic(null);
                         }
                     }
                 };
@@ -74,22 +78,21 @@ public class ArticlesListComponent extends Component {
             }
 
         });
-        
 
     }
 
     private void init() {
         ObservableList<String> titles = FXCollections.observableArrayList("Title 1", "Title 2", "Title 3");
-        
+
         ObservableList<Date> dates = FXCollections.observableArrayList(Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), Calendar.getInstance().getTime());
-    
+
         titleCol.setCellValueFactory(new PropertyValueFactory("title"));
         dateCol.setCellValueFactory(new PropertyValueFactory("date"));
-        
-        for(int i = 0; i < titles.size(); i++) {
+
+        for (int i = 0; i < titles.size(); i++) {
             articles.add(new Article(titles.get(i), "content", dates.get(i)));
         }
-       
+
         articlesTable.setItems(articles);
     }
 
