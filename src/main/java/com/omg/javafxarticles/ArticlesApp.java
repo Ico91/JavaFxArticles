@@ -1,24 +1,30 @@
 package com.omg.javafxarticles;
 
-import com.omg.javafxarticles.articles.ArticlesSceneController;
+import com.omg.javafxarticles.main.ScreenController;
+import com.omg.javafxarticles.main.Screens;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 
 public class ArticlesApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/articles/ArticlesScene.fxml"));
-        
+
+        ScreenController controller = new ScreenController(stage);
+        controller.loadScreen(Screens.LOGIN_SCREEN, Screens.LOGIN_SCREEN_FXML);
+        controller.loadScreen(Screens.ARTICLES_SCREEN, Screens.ARTICLES_SCREEN_XML);
+
+        controller.setScreen(Screens.LOGIN_SCREEN);
+
+        Group root = new Group();
+        root.getChildren().addAll(controller);
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
-        
+
         stage.setTitle("JavaFX and Maven");
+        stage.sizeToScene();
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

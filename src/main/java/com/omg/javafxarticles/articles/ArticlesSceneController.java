@@ -7,16 +7,21 @@ package com.omg.javafxarticles.articles;
  */
 
 import com.omg.javafxarticles.main.ChangeableView;
+import com.omg.javafxarticles.main.ScreenController;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
  *
  * @author default
  */
-public class ArticlesSceneController extends ChangeableView {
+public class ArticlesSceneController extends VBox implements ChangeableView, Initializable{
 
+    private ScreenController controller;
+    
     public ArticlesSceneController() {
         
     }
@@ -29,5 +34,10 @@ public class ArticlesSceneController extends ChangeableView {
     public void initialize(URL url, ResourceBundle rb) {
         
     }    
+
+    @Override
+    public void setController(ScreenController controller) {
+        this.controller = controller;
+    }
     
 }

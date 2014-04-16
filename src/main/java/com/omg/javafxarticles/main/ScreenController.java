@@ -6,23 +6,26 @@
 package com.omg.javafxarticles.main;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 /**
  *
  * @author default
  */
 public class ScreenController extends StackPane {
-
+    private final Stage stage;
     private final Map<String, Node> screens;
 
-    public ScreenController() {
+    public ScreenController(Stage stage) {
         screens = new HashMap<>();
+        this.stage = stage;
     }
 
     public void addScreen(String name, Node screen) {
@@ -30,16 +33,34 @@ public class ScreenController extends StackPane {
     }
 
     public void loadScreen(String name, String resource) throws IOException {
-        FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
-        Parent loadScreen = (Parent) myLoader.load();
-        ChangeableView myScreenControler
-                = (ChangeableView) myLoader.getController();
-        myScreenControler.setController(this);
+
+        URL location = getClass().getResource(resource);
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+
+        Parent loadScreen = (Parent) fxmlLoader.load(location.openStream());
+
+        ChangeableView myScreenController = (ChangeableView) fxmlLoader.getController();
+
+        myScreenController.setController(this);
+
         addScreen(name, loadScreen);
     }
 
-    public void setScreen(String name) {
-
+    public boolean setScreen(String name) {
+        if (screens.get(name) != null) {
+            if (!getChildren().isEmpty()) {
+                getChildren().remove(0);
+                getChildren().add(0, screens.get(name));
+            } else {
+                getChildren().add(screens.get(name));
+            }
+            stage.sizeToScene();
+            stage.centerOnScreen();
+            return true;
+        }
+        System.out.println("screen hasn't been loaded!\n");
+        return false;
     }
 
 }

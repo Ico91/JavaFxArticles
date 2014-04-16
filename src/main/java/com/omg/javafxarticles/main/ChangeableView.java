@@ -5,22 +5,15 @@
  */
 package com.omg.javafxarticles.main;
 
-import javafx.fxml.Initializable;
-
 /**
  *
  * @author default
  */
-public abstract class ChangeableView implements Initializable {
-
-    protected ScreenController controller;
+public interface ChangeableView {
 
     /**
      *
      * @param controller
      */
-    public void setController(ScreenController controller) {
-        this.controller = controller;
-    }
-
+    public void setController(ScreenController controller);
 }

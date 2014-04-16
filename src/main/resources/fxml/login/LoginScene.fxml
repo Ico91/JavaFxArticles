@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.omg.javafxarticles.login.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" style="-fx-border-width: 3px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.omg.javafxarticles.login.LoginController">
+    <children>
+        <LoginComponent fx:id="loginComponent"/>
+    </children>
+</AnchorPane>
