@@ -15,12 +15,12 @@
         </HBox>
         <HBox id="main" fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="900.0">
             <children>
-                <HBox id="articlesList" fx:id="articlesList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="270.0">
+                <HBox id="articlesList" fx:id="articlesList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="320.0">
                     <children>
                         <ArticlesListComponent />
                     </children>
                 </HBox>
-                <HBox id="articleDetails" fx:id="articleDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="630.0" >
+                <HBox id="articleDetails" fx:id="articleDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="580.0" >
                     <children>
                         <ArticlesDetailsComponent />
                     </children>

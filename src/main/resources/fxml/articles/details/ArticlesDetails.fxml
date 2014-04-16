@@ -4,13 +4,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root id="ArticleDetails" prefHeight="500.0" prefWidth="600.0" type="javafx.scene.layout.AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" >
+<fx:root id="ArticleDetails" prefHeight="500.0" prefWidth="549.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label layoutX="21.0" layoutY="22.0" text="Title:" />
-        <TextField id="articleTitle" fx:id="articleTitle" layoutX="21.0" layoutY="48.0" prefHeight="25.0" prefWidth="550.0" />
+        <TextField id="articleTitle" fx:id="articleTitle" layoutX="21.0" layoutY="48.0" prefHeight="25.0" prefWidth="500.0" />
         <Label layoutX="19.964599609375" layoutY="94.5" text="Content:" />
-        <Button id="btnSave" fx:id="btnSave" layoutX="300.0" layoutY="447.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Save" />
-        <Button id="btnReset" fx:id="btnReset" layoutX="464.0" layoutY="447.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Reset" />
-        <TextArea id="articleContent" fx:id="articleContent" layoutX="21.0" layoutY="125.0" prefHeight="300.0" prefWidth="550.0" />
+        <Button id="btnSave" fx:id="btnSave" layoutX="221.0" layoutY="447.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Save" />
+        <Button id="btnReset" fx:id="btnReset" layoutX="421.0" layoutY="447.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Reset" />
+        <TextArea id="articleContent" fx:id="articleContent" layoutX="21.0" layoutY="125.0" prefHeight="300.0" prefWidth="500.0" />
     </children>
 </fx:root>

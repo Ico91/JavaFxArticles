@@ -42,6 +42,6 @@ public class LoginComponent extends Component {
    }
     
     public boolean isValidUser() {
-        return "admin".equals(tfUsername.getText()) && "admin".equals(tfPassword.getText());
+        return true;
     }
 }
